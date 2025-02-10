@@ -1,0 +1,15 @@
+[package]
+name = "physx-issue-rs"
+version = "0.1.0"
+edition = "2021"
+build = "build/main.rs"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+physx-sys = "0.11.5"
+
+[build-dependencies]
+build-rs = "0.1"
+csbindgen = "1.9.1"

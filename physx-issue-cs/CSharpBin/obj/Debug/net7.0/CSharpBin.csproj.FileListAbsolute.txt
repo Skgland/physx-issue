@@ -1,0 +1,15 @@
+C:\Users\Bennet\Git\physx-issue\physx-issue-cs\CSharpBin\obj\Debug\net7.0\CSharpBin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bennet\Git\physx-issue\physx-issue-cs\CSharpBin\obj\Debug\net7.0\CSharpBin.AssemblyInfoInputs.cache
+C:\Users\Bennet\Git\physx-issue\physx-issue-cs\CSharpBin\obj\Debug\net7.0\CSharpBin.AssemblyInfo.cs
+C:\Users\Bennet\Git\physx-issue\physx-issue-cs\CSharpBin\obj\Debug\net7.0\CSharpBin.csproj.CoreCompileInputs.cache
+C:\Users\Bennet\Git\physx-issue\physx-issue-cs\CSharpBin\bin\Debug\net7.0\CSharpBin.exe
+C:\Users\Bennet\Git\physx-issue\physx-issue-cs\CSharpBin\obj\Debug\net7.0\CSharpBin.dll
+C:\Users\Bennet\Git\physx-issue\physx-issue-cs\CSharpBin\obj\Debug\net7.0\refint\CSharpBin.dll
+C:\Users\Bennet\Git\physx-issue\physx-issue-cs\CSharpBin\obj\Debug\net7.0\CSharpBin.pdb
+C:\Users\Bennet\Git\physx-issue\physx-issue-cs\CSharpBin\bin\Debug\net7.0\physx_issue_rs.dll
+C:\Users\Bennet\Git\physx-issue\physx-issue-cs\CSharpBin\bin\Debug\net7.0\CSharpBin.deps.json
+C:\Users\Bennet\Git\physx-issue\physx-issue-cs\CSharpBin\bin\Debug\net7.0\CSharpBin.runtimeconfig.json
+C:\Users\Bennet\Git\physx-issue\physx-issue-cs\CSharpBin\bin\Debug\net7.0\CSharpBin.dll
+C:\Users\Bennet\Git\physx-issue\physx-issue-cs\CSharpBin\bin\Debug\net7.0\CSharpBin.pdb
+C:\Users\Bennet\Git\physx-issue\physx-issue-cs\CSharpBin\obj\Debug\net7.0\CSharpBin.genruntimeconfig.cache
+C:\Users\Bennet\Git\physx-issue\physx-issue-cs\CSharpBin\obj\Debug\net7.0\ref\CSharpBin.dll

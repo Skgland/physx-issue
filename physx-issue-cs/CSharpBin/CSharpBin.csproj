@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <Target Name="CompileGenerated" BeforeTargets="BeforeCompile" AfterTargets="GenerateRustDll">
+    <PropertyGroup>
+      <GeneratedFilePath>../../physx-issue-rs/dotnet/*.g*.cs</GeneratedFilePath>
+    </PropertyGroup>
+    <ItemGroup>
+      <Compile Include="$(GeneratedFilePath)" />
+    </ItemGroup>
+  </Target>
+  <Target Name="GenerateRustDll" BeforeTargets="BeforeBuild">
+    <Exec Command="cargo build --release --manifest-path=../../physx-issue-rs/Cargo.toml" Condition="'$(Configuration)' == 'Release'" />
+    <Exec Command="cargo build           --manifest-path=../../physx-issue-rs/Cargo.toml" Condition="'$(Configuration)' == 'Debug'" />
+    <!-- https://stackoverflow.com/a/48714896/7847252 -->
+    <ItemGroup Condition=" '$(OS)' == 'Windows_NT' ">
+      <Content
+        Include="../../physx-issue-rs/target/release/physx_issue_rs.dll"
+        TargetPath="physx_issue_rs.dll"
+        CopyToOutputDirectory="PreserveNewest"
+        Condition="'$(Configuration)' == 'Release'" />
+      <Content
+        Include="../../physx-issue-rs/target/debug/physx_issue_rs.dll"
+        TargetPath="physx_issue_rs.dll"
+        CopyToOutputDirectory="PreserveNewest"
+        Condition="'$(Configuration)' == 'Debug'" />
+    </ItemGroup>
+    <ItemGroup Condition=" '$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' ">
+      <Content
+        Include="../../physx-issue-rs/target/release/libphysx_issue_rs.so"
+        TargetPath="libphysx_issue_rs.so"
+        CopyToOutputDirectory="PreserveNewest"
+        Condition="'$(Configuration)' == 'Release'" />
+      <Content
+        Include="../../physx-issue-rs/target/debug/libphysx_issue_rs.so"
+        TargetPath="libphysx_issue_rs.so"
+        CopyToOutputDirectory="PreserveNewest"
+        Condition="'$(Configuration)' == 'Debug'" />
+    </ItemGroup>
+    <ItemGroup Condition=" '$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' ">
+      <Content
+        Include="../../physx-issue-rs/target/release/physx_issue_rs.dylib"
+        TargetPath="physx_issue_rs.dylib"
+        CopyToOutputDirectory="PreserveNewest"
+        Condition="'$(Configuration)' == 'Release'" />
+      <Content
+        Include="../../physx-issue-rs/target/debug/physx_issue_rs.dylib"
+        TargetPath="physx_issue_rs.dylib"
+        CopyToOutputDirectory="PreserveNewest"
+        Condition="'$(Configuration)' == 'Debug'" />
+    </ItemGroup>
+  </Target>
+</Project>
