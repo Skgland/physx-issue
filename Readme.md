@@ -1,0 +1,1 @@
+Created for https://github.com/Cysharp/csbindgen/issues/100 to compare type layout of `PxControllerShapeHit` in Rust and C#.
